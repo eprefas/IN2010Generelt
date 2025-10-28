@@ -1,0 +1,77 @@
+Forelesning 28.10
+
+2-sammenhengende grafer:
+- k er antall kanter en node har
+- jo flere kanter mellom nodene, jo mer sammenhengende er den
+
+En urettet graf er 2-sammenhengende dersom den forblir sammenhengdene når en vilkårlig node med alle dens kanter fjernes
+
+Du må fjerne minst 2 noder for å gjøre grafen usammenhengende.
+
+Grafen har ingen artikulasjonspunkt (cut vertex) — dvs. ingen enkelt node som, hvis fjernet, deler grafen i flere komponenter.
+
+
+
+
+
+*En graf er sammenhengdene hvis du kan kjøre dybde-først søk og den besøker ALLE nodene.
+
+
+
+2-sammenhengende grafer
+• En graf G = (V, E) er 2-sammenhengende hvis G forblir sammenhengende selv
+hvis en hvilken som helst node v ∈ V fjernes fra G
+• Sagt annerledes, det finnes to distinkte stier mellom hver par av noder
+• To stier mellom u og v er distinkte dersom de ikke deler noen kanter og ikke deler
+noen noder utenom u og v
+• Mer generelt sier vi at en graf er k-sammenhengende dersom grafen forblir
+sammenhengende hvis man fjerner færre enn k noder
+
+
+• Dette er et nyttig begrep i anvendelser der det er et ønske om redundans
+• I et nettverk betyr det at en hvilken som helst maskin kan gå ned, og pakker vil
+fremdeles nå frem
+• Hos Ruter kan det bety at det kan være full stans rundt en holdeplass, men at det
+finnes en alternativ rute for alle reisende
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+⚙️ 4. Hvordan finne SCC-er effektivt
+
+Det finnes to klassiske lineære algoritmer:
+
+a) Kosaraju’s algoritme
+
+Bruker to DFS-er.
+
+Kjør DFS og lag en stabel etter ferdig-tid.
+
+Snu alle kantene (transponér grafen).
+
+Kjør DFS på nytt i rekkefølge fra stabelen → hver DFS gir én SCC.
+Kjøretid: 
+O(V+E)
+O(V+E).
+
+b) Tarjan’s algoritme
+
+Bruker én DFS og en stabel for å spore noder som tilhører nåværende komponent.
+
+Beregner disc[u] og low[u] likt som for 2-sammenhengende sjekk.
+
+Når disc[u] == low[u], har du funnet en hel SCC.
+Kjøretid: 
+O(V+E)
+O(V+E).

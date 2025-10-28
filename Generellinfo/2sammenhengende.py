@@ -38,7 +38,7 @@ def Strongly_connected_comp(G):
     visited = set()
     comps = set()
     while stack:
-        #Vil pope systematisk, foreldre først 
+        #Vil poppe systematisk, foreldre først 
         u = stack.pop()
         if u not in visited:
             comp = set()
