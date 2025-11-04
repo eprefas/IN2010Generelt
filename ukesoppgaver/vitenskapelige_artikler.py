@@ -40,3 +40,25 @@ print(components)
 
 
 
+#-----------------------_oppg B----------------------
+# Du ser nå at grafen du har tegnet kan forenkles. En oversikt over hvordan forskningsprosjektene henger sammen er tilstrekkelig.
+# Gi en algoritme som tar grafen G og lista med forskningsprosjekter som input, og gir en ny graf K = (Vk, Ek) som output.
+# En node u i Vk representerer et forskningsprosjekt, og en kant (u, v) i Ek illustrerer at en artikkel i u inneholder en referanse til en artikkel i v.
+# Oppgi i tillegg kjøretidskompleksiteten til algoritmen din i stor O-notasjon, og gi en kort begrunnelse for svaret ditt.
+
+def forenkle(components, G):
+    E, V = G
+    Vk = []
+    Ek = {}, #{u, v}
+    while components:
+        c = components.pop()
+        while c:
+            u = c.pop()
+            Vk.add(u)
+            for v in E[u]:
+                if v in c:
+                    Ek.add[u, v]
+    K = (Vk, Ek)
+    return K
+
+
