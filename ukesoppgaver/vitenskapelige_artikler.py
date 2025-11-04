@@ -1,11 +1,7 @@
 # Gi en algoritme som finner alle forskningsprosjekter i grafen.
 # Algoritmen skal ta G som input, og returnere en liste med forskningsprosjekter som output.
 
-<<<<<<< HEAD
-from IN2010Generelt.TopSort2 import TopSort
-=======
 from TopSort2 import topological_sort
->>>>>>> bade2406221e5c87d9ff725e398f97357d57fb3d
 from Grafer import DFS_visit
 
 
@@ -45,7 +41,7 @@ def Strongly_connected_comps(G):
 def forenkle(components, G):
     E, V = G
     Vk = []
-    Ek = {}, #{u, v}
+    Ek = {}, #(u, v)
     while components:
         c = components.pop()
         while c:
@@ -53,7 +49,7 @@ def forenkle(components, G):
             Vk.add(u)
             for v in E[u]:
                 if v in c:
-                    Ek.add[u, v]
+                    Ek[u] = (u, v)
     K = (Vk, Ek)
     return K
 
