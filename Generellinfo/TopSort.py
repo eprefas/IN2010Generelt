@@ -21,3 +21,5 @@ def topological_sort(graph):
         raise ValueError("Graph has a cycle; topological ordering is impossible.")
 
     return output
+
+
