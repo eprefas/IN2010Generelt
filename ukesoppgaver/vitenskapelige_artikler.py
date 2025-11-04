@@ -7,10 +7,8 @@ from IN2010Generelt.TopSort2 import TopSort
 from TopSort2 import topological_sort
 >>>>>>> bade2406221e5c87d9ff725e398f97357d57fb3d
 from Grafer import DFS_visit
-# from 2sammenhengende import ReverseGraph
 
 
-#Reversere alle rettede kanter 
 def ReverseGraph(G):
     V, E = G
     Er = set()
@@ -19,27 +17,21 @@ def ReverseGraph(G):
     return V, Er
 #Kjøretid O(|E|)
 
+def Strongly_connected_comps(G):
+    
+    components = set()
+    stack = topological_sort(G)
+    visited = set()
+    gR = ReverseGraph(G)
 
-components = set()
-stack = topological_sort(G)
+    while stack:
+        u = stack.pop()
+        if u not in visited:
+            c = set()
+            DFS_visit(gR, u, visited, c)
+            components.add(frozenset(c))
 
-visited = set()
-
-gR = ReverseGraph(G)
-
-while stack:
-    u = stack.pop()
-    if u not in visited:
-        c = set()
-        DFS_visit(gR, u, visited, c)
-        components.add(frozenset(c))
-
-print(components)
-
-
-
-
-
+    return components
 
 
 
