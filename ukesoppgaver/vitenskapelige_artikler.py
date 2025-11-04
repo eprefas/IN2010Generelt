@@ -49,7 +49,7 @@ def forenkle(components, G):
             Vk.add(u)
             for v in E[u]:
                 if v in c:
-                    Ek[u] = (u, v)
+                    Ek[u].add(u, v)
     K = (Vk, Ek)
     return K
 
