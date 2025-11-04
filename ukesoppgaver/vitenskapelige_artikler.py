@@ -1,7 +1,7 @@
 # Gi en algoritme som finner alle forskningsprosjekter i grafen.
 # Algoritmen skal ta G som input, og returnere en liste med forskningsprosjekter som output.
 
-from TopSort import TopSort
+from TopSort2 import topological_sort
 from Grafer import DFS_visit
 # from 2sammenhengende import ReverseGraph
 
@@ -17,7 +17,7 @@ def ReverseGraph(G):
 
 
 components = set()
-stack = TopSort(G)
+stack = topological_sort(G)
 
 visited = set()
 
