@@ -68,10 +68,10 @@ def forenkle(G, projects):
 #Oppgave C 
 '''
 For å finne eldste forksningsprosjekt fra s så kan man bruke DAG siden med forenklingen som ble gjort
-så har ike grafen noen sykler lenger. Forskiningsprosjektene anses som noder og kantene er referanser fra
+så har ikke grafen noen sykler lenger. Forskiningsprosjektene anses som noder og kantene er referanser fra
 to artikler u og v som forbinder de ulike prosjektene. Dette er logisk feil i oppgaven man vil ikke kunne bruke
-weight(u,v) fordi nodene u og v er prosjekter og ikke ariktler per løsning i fasit. Men la oss anta at den
-på en eller annen måte finner de to artiklene innad i prosjektene som fobinder dem. 
+weight(u,v) fordi nodene u og v er prosjekter og ikke ariktler per løsning i fasit i den forenklede grafen. 
+Men la oss anta at den på en eller annen måte finner de to artiklene innad i prosjektene som fobinder dem. 
 Hvis da et forskningsprosjekt u inneholder en referanse til prosjekt v, da er altså er v eldre en u. Derfor blir det en rettet 
 det en graf der kantene går fra nyere -> eldre. Ved å bruke DAG får vi da riktig verdier. Alle eldre prosjekter 
 fra s vil få oppdarte verdier og alle nyere vil bil satt som uendelig(ikke mulig å nå). Retningen er altså 
