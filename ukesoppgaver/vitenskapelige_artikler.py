@@ -61,12 +61,25 @@ def forenkle(G, projects):
     
     K = (Vk, Ek)
     return K
+#Problemet med første løsning var at den gikk ut på at nodene forble artikler, men i forenklingen så er
+#komponentene(forskningsprosjektene) definert som nodene og kantene er bare forbindelse mellom prosjektene
 
     
 #Oppgave C 
-
+'''
+For å finne eldste forksningsprosjekt fra s så kan man bruke DAG siden med forenklingen som ble gjort
+så har ike grafen noen sykler lenger. Forskiningsprosjektene anses som noder og kantene er referanser fra
+to artikler u og v som forbinder de ulike prosjektene. Dette er logisk feil i oppgaven man vil ikke kunne bruke
+weight(u,v) fordi nodene u og v er prosjekter og ikke ariktler per løsning i fasit. Men la oss anta at den
+på en eller annen måte finner de to artiklene innad i prosjektene som fobinder dem. 
+Hvis da et forskningsprosjekt u inneholder en referanse til prosjekt v, da er altså er v eldre en u. Derfor blir det en rettet 
+det en graf der kantene går fra nyere -> eldre. Ved å bruke DAG får vi da riktig verdier. Alle eldre prosjekter 
+fra s vil få oppdarte verdier og alle nyere vil bil satt som uendelig(ikke mulig å nå). Retningen er altså 
+riktig. Med DAG får vi korteste vei fra s til alle sine barn(eldre forskningsprosjekter). Prosjektet med 
+høyest verdi er det som er det eldste og slik finner vi svaret på oppgaven 
+'''
 
 
 #Oppgave D
-
+#De aller eldste forskningsprosjektene i grafene er løvnoder, pe peker ikke på noen, blir bare pekt på selv
 
