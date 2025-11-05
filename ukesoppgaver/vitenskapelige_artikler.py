@@ -14,7 +14,6 @@ def ReverseGraph(G):
 #Kjøretid O(|E|)
 
 def Strongly_connected_comps(G):
-    
     components = set()
     stack = topological_sort(G)
     visited = set()
@@ -38,19 +37,36 @@ def Strongly_connected_comps(G):
 # En node u i Vk representerer et forskningsprosjekt, og en kant (u, v) i Ek illustrerer at en artikkel i u inneholder en referanse til en artikkel i v.
 # Oppgi i tillegg kjøretidskompleksiteten til algoritmen din i stor O-notasjon, og gi en kort begrunnelse for svaret ditt.
 
-def forenkle(components, G):
-    E, V = G
-    Vk = []
-    Ek = {}, #(u, v)
-    while components:
-        c = components.pop()
-        while c:
-            u = c.pop()
-            Vk.add(u)
-            for v in E[u]:
-                if v in c:
-                    Ek[u].add(u, v)
+#Kjøretidskompleksitet er O(V+E)
+def forenkle(G, projects):
+    V, E = G
+    Vk = set()
+    Ek = set()
+    components = dict()
+
+    for p in projects:
+        for node in p:
+            Vk.add(node)
+            components[node] = p
+    
+    for (u, v) in E: 
+        if u not in components or v not in components:
+            continue
+        
+        c1 = components[u]
+        c2 = components[v]
+        if c1 != c2:
+            edge = (c1, c2)
+            Ek.add(edge)
+    
     K = (Vk, Ek)
     return K
+
+    
+#Oppgave C 
+
+
+
+#Oppgave D
 
 
