@@ -15,7 +15,7 @@ def leftchild(i):
     return 2*i + 1
 
 def rightchild(i):
-    return 2*i+2
+    return 2*i + 2
 
 ##Kjøretid er O(log(n))
 def fjern_minste(A):
