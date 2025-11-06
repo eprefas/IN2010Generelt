@@ -65,7 +65,6 @@ def BuildMaxHeap(A,n):
         Bubbledown(A,i,n)
         i -= 1
 
-##Kjøretid er O(n*log(n)) på heapsort
 def HeapSort(A):
     n = len(A) - 1
     BuildMaxHeap(A,n)
@@ -78,6 +77,8 @@ def HeapSort(A):
         Bubbledown(A,0,n)
     return A
         
-
+'''
+Heapsort sin kjøretid er O(n*log(n)), den er in-place, men ikke stabil
+'''
 
 
