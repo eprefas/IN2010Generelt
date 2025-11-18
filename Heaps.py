@@ -25,13 +25,13 @@ def fjern_minste(A):
     #Flytter siste element øverst i treet og oppdaterer
     A[0] = A[lengde]
     i = 0
-    while leftchild(i) < lengde:
+    while leftchild(i) <= lengde:
         j = leftchild(i)
         #Endrer j til høyrebarn hvis det er mindre enn venstre
-        if rightchild(i) < lengde and A[rightchild(i)] < A[j]:
+        if rightchild(i) <= lengde and A[rightchild(i)] < A[j]:
             j = rightchild(i)
         #Sjekker at parent er mindre eller lik minste barn, hvis så så er algoritmen ferdig
-        if A[i] <= A[j]:
+        if A[i] <= A[j]: 
             return x
         #Bytter plass på parent og minste barn
         A[i], A[j] = A[j], A[i]
